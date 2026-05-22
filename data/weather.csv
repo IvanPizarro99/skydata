@@ -1,14 +1,21 @@
-﻿date;time;city;temperature;feels_like;humidity;weather;wind_speed
-22/05/2026;20:03:00;Rio de Janeiro;20.72;21.12;87;broken clouds;2.06
-22/05/2026;20:03:02;São Paulo;14.62;14.57;93;overcast clouds;4.12
-22/05/2026;20:03:04;Belo Horizonte;19.15;19.16;78;clear sky;4.12
-22/05/2026;20:03:06;Porto Alegre;14.87;14.61;84;few clouds;5.14
-22/05/2026;20:03:08;Porto Alegre;14.87;14.61;84;few clouds;5.14
-22/05/2026;20:03:15;Porto Alegre;14.87;14.61;84;few clouds;5.14
-22/05/2026;20:10:15;Rio de Janeiro;21;21.43;87;broken clouds;3.6
-22/05/2026;20:10:17;São Paulo;14.55;14.59;97;overcast clouds;3.6
-22/05/2026;20:10:19;Belo Horizonte;19.68;19.66;75;overcast clouds;0.45
-22/05/2026;20:10:21;Porto Alegre;14.87;14.68;87;few clouds;4.12
-22/05/2026;20:13:55;Rio de Janeiro;21;21.43;87;broken clouds;3.6
-22/05/2026;20:14:00;São Paulo;14.55;14.59;97;overcast clouds;3.6
-22/05/2026;20:14:14;Rio de Janeiro;21;21.43;87;broken clouds;3.6
+﻿date;time;city;temperature;feels_like;humidity;weather;wind_speed;;
+22/05/2026;20:03:04;Belo Horizonte;19.15;19.16;78;clear sky;4.12;;
+23/05/2026;20:10:19;Belo Horizonte;19.68;19.66;75;overcast clouds;0.45;;
+24/05/2026;21:10:19;Belo Horizonte;19.68;19.66;76;overcast clouds;0.46;;
+25/05/2026;22:10:19;Belo Horizonte;19.68;19.66;77;overcast clouds;0.47;;
+26/05/2026;23:10:19;Belo Horizonte;19.68;19.66;78;overcast clouds;0.48;;
+22/05/2026;20:03:06;Porto Alegre;14.87;14.61;84;few clouds;5.14;;
+23/05/2026;20:03:08;Porto Alegre;14.87;14.61;84;few clouds;5.14;;
+24/05/2026;20:03:15;Porto Alegre;14.87;14.61;84;few clouds;5.14;;
+25/05/2026;20:10:21;Porto Alegre;14.87;14.68;87;few clouds;4.12;;
+26/05/2026;20:27:57;Porto Alegre;14.62;14.46;89;few clouds;4.12;;
+22/05/2026;20:03:00;Rio de Janeiro;20.72;21.12;87;broken clouds;2.06;;
+23/05/2026;21:03:00;Rio de Janeiro;20.73;21.13;88;broken clouds;2.07;;
+24/05/2026;22:03:00;Rio de Janeiro;20.74;21.14;89;broken clouds;2.08;;
+25/05/2026;23:03:00;Rio de Janeiro;20.75;21.15;90;broken clouds;2.09;;
+26/05/2026;00:03:00;Rio de Janeiro;20.76;21.16;91;broken clouds;2.10;;
+22/05/2026;20:03:02;São Paulo;14.62;14.57;93;overcast clouds;4.12;;
+23/05/2026;21:03:02;São Paulo;14.62;14.57;94;overcast clouds;4.13;;
+24/05/2026;22:03:02;São Paulo;14.62;14.57;95;overcast clouds;4.14;;
+25/05/2026;23:03:02;São Paulo;14.62;14.57;96;overcast clouds;3.8;;
+23/05/2026;21:27:53;São Paulo;14.62;14.59;95;overcast clouds;3.7;;

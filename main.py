@@ -1,9 +1,9 @@
+from graph import plot_all_cities
 import requests
 import pandas as pd
 from datetime import datetime
 import os
 
-# OpenWeather API
 API_KEY = '416bbb07e207cf9aaaac3fc5eae8089e'
 
 cities = [
@@ -13,50 +13,62 @@ cities = [
     'Porto Alegre'
 ]
 
+# Cria a pasta data caso não exista
+os.makedirs('data', exist_ok=True)
+
 while True:
 
-
-    print('\nSelect the city:\n')
+    print('\n========== SKYDATA ==========')
+    print('\nSelect an option:\n')
 
     for index, city in enumerate(cities, start=1):
         print(f'{index} - {city}')
 
+    print('5 - Show graph')
     print('0 - Exit')
 
     option = input('\nEnter the option number: ')
 
+    # EXIT
     if option == '0':
         print('\nClosing SkyData...')
         break
 
+    # VALIDATE NUMBER
     if not option.isdigit():
         print('\nInvalid option!')
         continue
 
     option = int(option)
 
+    # SHOW GRAPH
+    if option == 5:
+        plot_all_cities()
+        continue
+
+    # VALIDATE CITY OPTION
     if option < 1 or option > len(cities):
         print('\nInvalid option!')
         continue
 
     city = cities[option - 1]
 
-    url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&lang=en&units=metric'
+    url = (
+        f'https://api.openweathermap.org/data/2.5/weather'
+        f'?q={city}&appid={API_KEY}&lang=en&units=metric'
+    )
 
     response = requests.get(url)
-
     data = response.json()
 
+    # API SUCCESS
     if response.status_code == 200:
 
         now = datetime.now()
 
-        current_date = now.strftime('%d/%m/%Y')
-        current_time = now.strftime('%H:%M:%S')
-
         weather_data = {
-            'date': [current_date],
-            'time': [current_time],
+            'date': [now.strftime('%d/%m/%Y')],
+            'time': [now.strftime('%H:%M:%S')],
             'city': [data['name']],
             'temperature': [data['main']['temp']],
             'feels_like': [data['main']['feels_like']],
@@ -67,12 +79,13 @@ while True:
 
         df = pd.DataFrame(weather_data)
 
-        file_exists = os.path.isfile('weather.csv')
+        file_path = 'data/weather.csv'
+        file_exists = os.path.isfile(file_path)
 
         try:
 
             df.to_csv(
-                'weather.csv',
+                file_path,
                 sep=';',
                 index=False,
                 mode='a',

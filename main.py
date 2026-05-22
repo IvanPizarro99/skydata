@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 import os
 
-API_KEY = '416bbb07e207cf9aaaac3fc5eae8089e'
+API_KEY = 'KEY_HERE'
 
 cities = [
     'Rio de Janeiro',
@@ -13,7 +13,7 @@ cities = [
     'Porto Alegre'
 ]
 
-# Cria a pasta data caso não exista
+
 os.makedirs('data', exist_ok=True)
 
 while True:
@@ -29,24 +29,20 @@ while True:
 
     option = input('\nEnter the option number: ')
 
-    # EXIT
     if option == '0':
         print('\nClosing SkyData...')
         break
 
-    # VALIDATE NUMBER
     if not option.isdigit():
         print('\nInvalid option!')
         continue
 
     option = int(option)
 
-    # SHOW GRAPH
     if option == 5:
         plot_all_cities()
         continue
 
-    # VALIDATE CITY OPTION
     if option < 1 or option > len(cities):
         print('\nInvalid option!')
         continue
@@ -61,7 +57,6 @@ while True:
     response = requests.get(url)
     data = response.json()
 
-    # API SUCCESS
     if response.status_code == 200:
 
         now = datetime.now()

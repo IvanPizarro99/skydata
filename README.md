@@ -1,24 +1,43 @@
 # SkyData
 
-Satellite climate and environmental monitoring system using Python and APIs.
 
-## 📖 About the Project
+##  About the Project
 
-SkyData is a project focused on collecting, processing, and visualizing environmental and climate data from APIs and satellite sources.
+SkyData is a climate and environmental monitoring project focused on collecting, processing, and visualizing real-time data from APIs and satellite sources.
 
-The main goal is to develop practical skills in:
-- API consumption
-- Data analysis
-- Data engineering
-- Visualization
-- Automation
-- Python development
+The project was created with the objective of exploring modern technologies related to:
+- data analysis,
+- automation,
+- API integration,
+- environmental monitoring,
+- and software development using Python.
 
-This project was created as a portfolio project to explore real-world environmental data and build professional experience with data-driven applications.
+SkyData aims to transform raw environmental data into useful information through graphs, reports, and future interactive dashboards.
 
 ---
 
-## 🚀 Technologies
+##  Main Features
+
+- Real-time climate monitoring
+- API data collection
+- JSON data processing
+- Environmental data analysis
+- Data visualization with charts
+- Historical climate tracking
+
+---
+
+##  Project Vision
+
+The long-term goal of SkyData is to evolve into a complete environmental intelligence platform capable of:
+- monitoring climate conditions,
+- integrating satellite data,
+- detecting environmental anomalies,
+- and generating analytical insights in real time.
+
+---
+
+##  Technologies Used
 
 - Python
 - Requests
@@ -27,19 +46,25 @@ This project was created as a portfolio project to explore real-world environmen
 - Plotly
 - Git & GitHub
 
----
-
-## 🎯 Objectives
-
-- Consume real-time climate APIs
-- Process JSON data
-- Store environmental information
-- Generate charts and visual reports
-- Create future dashboards and monitoring systems
+Future technologies:
+- PostgreSQL
+- FastAPI
+- Docker
+- Interactive Maps
+- Machine Learning
 
 ---
 
-## 📂 Project Structure
+##  APIs and Data Sources
+
+Current and planned integrations:
+- OpenWeatherMap
+- NASA APIs
+- INPE APIs
+
+---
+
+##  Project Structure
 
 ```text
 skydata/

@@ -12,16 +12,144 @@ st.set_page_config(
 )
 
 city_to_state = {
-    'Rio de Janeiro': 'Rio de Janeiro',
-    'São Paulo': 'São Paulo',
-    'Belo Horizonte': 'Minas Gerais',
-    'Porto Alegre': 'Rio Grande do Sul',
-    'Brasília': 'Distrito Federal',
+    # Acre
+    'Rio Branco': 'Acre',
+    'Cruzeiro do Sul': 'Acre',
+    
+    # Alagoas
+    'Maceió': 'Alagoas',
+    'Rio Largo': 'Alagoas',
+    
+    # Amapá
+    'Macapá': 'Amapá',
+    'Santana': 'Amapá',
+    
+    # Amazonas
+    'Manaus': 'Amazonas',
+    'Parintins': 'Amazonas',
+    
+    # Bahia
     'Salvador': 'Bahia',
+    'Feira de Santana': 'Bahia',
+    'Vitória da Conquista': 'Bahia',
+    'Ilhéus': 'Bahia',
+    'Jequié': 'Bahia',
+    
+    # Ceará
     'Fortaleza': 'Ceará',
-    'Recife': 'Pernambuco',
+    'Caucaia': 'Ceará',
+    'Juazeiro do Norte': 'Ceará',
+    'Sobral': 'Ceará',
+    
+    # Distrito Federal
+    'Brasília': 'Distrito Federal',
+    
+    # Espírito Santo
+    'Vitória': 'Espírito Santo',
+    'Vila Velha': 'Espírito Santo',
+    'Serra': 'Espírito Santo',
+    
+    # Goiás
+    'Goiânia': 'Goiás',
+    'Aparecida de Goiânia': 'Goiás',
+    'Anápolis': 'Goiás',
+    
+    # Maranhão
+    'São Luís': 'Maranhão',
+    'Imperatriz': 'Maranhão',
+    'Caxias': 'Maranhão',
+    
+    # Mato Grosso
+    'Cuiabá': 'Mato Grosso',
+    'Várzea Grande': 'Mato Grosso',
+    'Rondonópolis': 'Mato Grosso',
+    
+    # Mato Grosso do Sul
+    'Campo Grande': 'Mato Grosso do Sul',
+    'Dourados': 'Mato Grosso do Sul',
+    'Três Lagoas': 'Mato Grosso do Sul',
+    
+    # Minas Gerais
+    'Belo Horizonte': 'Minas Gerais',
+    'Uberlândia': 'Minas Gerais',
+    'Contagem': 'Minas Gerais',
+    'Juiz de Fora': 'Minas Gerais',
+    'Divinópolis': 'Minas Gerais',
+    
+    # Pará
+    'Belém': 'Pará',
+    'Ananindeua': 'Pará',
+    'Marabá': 'Pará',
+    'Santarém': 'Pará',
+    
+    # Paraíba
+    'João Pessoa': 'Paraíba',
+    'Campina Grande': 'Paraíba',
+    'Patos': 'Paraíba',
+    
+    # Paraná
     'Curitiba': 'Paraná',
-    'Manaus': 'Amazonas'
+    'Londrina': 'Paraná',
+    'Maringá': 'Paraná',
+    'Ponta Grossa': 'Paraná',
+    
+    # Pernambuco
+    'Recife': 'Pernambuco',
+    'Jaboatão dos Guararapes': 'Pernambuco',
+    'Olinda': 'Pernambuco',
+    'Caruaru': 'Pernambuco',
+    
+    # Piauí
+    'Teresina': 'Piauí',
+    'Parnaíba': 'Piauí',
+    'Picos': 'Piauí',
+    
+    # Rio de Janeiro
+    'Rio de Janeiro': 'Rio de Janeiro',
+    'Niterói': 'Rio de Janeiro',
+    'Duque de Caxias': 'Rio de Janeiro',
+    'São Gonçalo': 'Rio de Janeiro',
+    
+    # Rio Grande do Norte
+    'Natal': 'Rio Grande do Norte',
+    'Mossoró': 'Rio Grande do Norte',
+    'Parnamirim': 'Rio Grande do Norte',
+    
+    # Rio Grande do Sul
+    'Porto Alegre': 'Rio Grande do Sul',
+    'Caxias do Sul': 'Rio Grande do Sul',
+    'Pelotas': 'Rio Grande do Sul',
+    'Santa Maria': 'Rio Grande do Sul',
+    
+    # Rondônia
+    'Porto Velho': 'Rondônia',
+    'Ariquemes': 'Rondônia',
+    'Ji-Paraná': 'Rondônia',
+    
+    # Roraima
+    'Boa Vista': 'Roraima',
+    'Rorainópolis': 'Roraima',
+    
+    # Santa Catarina
+    'Joinville': 'Santa Catarina',
+    'Blumenau': 'Santa Catarina',
+    'Florianópolis': 'Santa Catarina',
+    'Chapecó': 'Santa Catarina',
+    
+    # São Paulo
+    'São Paulo': 'São Paulo',
+    'Guarulhos': 'São Paulo',
+    'Campinas': 'São Paulo',
+    'São Bernardo do Campo': 'São Paulo',
+    'Santo André': 'São Paulo',
+    
+    # Sergipe
+    'Aracaju': 'Sergipe',
+    'Nossa Senhora do Socorro': 'Sergipe',
+    
+    # Tocantins
+    'Palmas': 'Tocantins',
+    'Araguaína': 'Tocantins',
 }
 
 st.markdown("""

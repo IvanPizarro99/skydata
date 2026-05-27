@@ -69,9 +69,8 @@ Current and planned integrations:
 ```text
 skydata/
 │
-├── app.py
+├── main.py
+├── dashboard.py
 ├── requirements.txt
 ├── README.md
-├── data/
-├── charts/
-└── assets/
+└──  data/weather.csv

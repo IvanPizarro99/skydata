@@ -150,7 +150,6 @@ city_to_state = {
     # Tocantins
     'Palmas': 'Tocantins',
     'Araguaína': 'Tocantins',
-    'Araguaína': 'Tocantins'
 }
 
 st.markdown("""
@@ -369,5 +368,3 @@ if geojson_path.exists():
     )
 else:
     st.info('Map visualization will be available once brazil_states.geojson is added.')
-    st.info('Map visualization will be available once brazil_states.geojson is added.')
-

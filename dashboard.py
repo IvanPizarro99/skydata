@@ -76,8 +76,7 @@ if not csv_path.exists():
     st.stop()
 
 if not geojson_path.exists():
-    st.error('brazil_states.geojson not found.')
-    st.stop()
+    st.warning('brazil_states.geojson not found. Install it or provide the file.')
 
 df = pd.read_csv(
     csv_path,
@@ -175,66 +174,69 @@ with col4:
         latest['city']
     )
 
-with open(
-    geojson_path,
-    'r',
-    encoding='utf-8'
-) as f:
+if geojson_path.exists():
+    with open(
+        geojson_path,
+        'r',
+        encoding='utf-8'
+    ) as f:
 
-    brazil_geojson = json.load(f)
+        brazil_geojson = json.load(f)
 
-fig = go.Figure(
-    go.Choropleth(
-        geojson=brazil_geojson,
+    fig = go.Figure(
+        go.Choropleth(
+            geojson=brazil_geojson,
 
-        locations=state_df['state_name'],
+            locations=state_df['state_name'],
 
-        z=state_df['temperature'],
+            z=state_df['temperature'],
 
-        featureidkey='properties.name',
+            featureidkey='properties.name',
 
-        colorscale='Turbo',
+            colorscale='Turbo',
 
-        marker_line_color='white',
-        marker_line_width=1,
+            marker_line_color='white',
+            marker_line_width=1,
 
-        customdata=state_df[['state_name']],
+            customdata=state_df[['state_name']],
 
-        hovertemplate=
-        '<b>%{customdata[0]}</b><br>' +
-        'Temperature: %{z:.1f}°C' +
-        '<extra></extra>',
+            hovertemplate=
+            '<b>%{customdata[0]}</b><br>' +
+            'Temperature: %{z:.1f}°C' +
+            '<extra></extra>',
 
-        colorbar_title='°C'
+            colorbar_title='°C'
+        )
     )
-)
 
-fig.update_layout(
-    paper_bgcolor='rgba(0,0,0,0)',
+    fig.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
 
-    plot_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
 
-    font=dict(
-        color='white',
-        size=14
-    ),
+        font=dict(
+            color='white',
+            size=14
+        ),
 
-    margin=dict(
-        l=0,
-        r=0,
-        t=20,
-        b=0
-    ),
+        margin=dict(
+            l=0,
+            r=0,
+            t=20,
+            b=0
+        ),
 
-    height=800
-)
+        height=800
+    )
 
-fig.update_geos(
-    fitbounds='locations',
-    visible=False
-)
+    fig.update_geos(
+        fitbounds='locations',
+        visible=False
+    )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+else:
+    st.info('Map visualization will be available once brazil_states.geojson is added.')

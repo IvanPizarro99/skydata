@@ -9,53 +9,20 @@
 20/05/2026;08:45:00;Recife;28.0;29.3;81;broken clouds;5.4
 20/05/2026;08:50:00;Curitiba;14.9;14.2;92;mist;3.9
 20/05/2026;08:55:00;Manaus;31.4;35.0;69;thunderstorm;2.7
-21/05/2026;09:10:00;Rio de Janeiro;25.0;25.7;80;few clouds;3.4
-21/05/2026;09:15:00;São Paulo;19.1;18.9;86;overcast clouds;4.3
-21/05/2026;09:20:00;Belo Horizonte;21.0;20.8;74;clear sky;2.5
-21/05/2026;09:25:00;Porto Alegre;16.0;15.7;87;light rain;5.2
-21/05/2026;09:30:00;Brasília;23.4;23.0;55;clear sky;3.1
-21/05/2026;09:35:00;Salvador;27.8;29.0;77;scattered clouds;4.2
-21/05/2026;09:40:00;Fortaleza;29.5;31.4;70;clear sky;6.4
-21/05/2026;09:45:00;Recife;28.5;29.8;79;broken clouds;5.0
-21/05/2026;09:50:00;Curitiba;15.2;14.8;89;mist;3.6
-21/05/2026;09:55:00;Manaus;32.0;35.8;66;thunderstorm;2.4
-22/05/2026;10:10:00;Rio de Janeiro;26.1;26.9;78;clear sky;3.8
-22/05/2026;10:15:00;São Paulo;20.0;19.8;84;overcast clouds;4.0
-22/05/2026;10:20:00;Belo Horizonte;22.2;21.9;70;few clouds;2.2
-22/05/2026;10:25:00;Porto Alegre;17.1;16.9;83;light rain;5.0
-22/05/2026;10:30:00;Brasília;24.0;23.7;52;clear sky;3.0
-22/05/2026;10:35:00;Salvador;28.4;29.7;75;scattered clouds;4.3
-22/05/2026;10:40:00;Fortaleza;30.0;32.1;68;clear sky;6.1
-22/05/2026;10:45:00;Recife;29.0;30.4;77;broken clouds;5.1
-22/05/2026;10:50:00;Curitiba;16.0;15.5;87;mist;3.5
-22/05/2026;10:55:00;Manaus;32.5;36.1;65;thunderstorm;2.1
-23/05/2026;11:10:00;Rio de Janeiro;27.0;27.8;75;clear sky;4.0
-23/05/2026;11:15:00;São Paulo;21.2;20.9;80;overcast clouds;3.9
-23/05/2026;11:20:00;Belo Horizonte;23.1;22.8;68;clear sky;2.0
-23/05/2026;11:25:00;Porto Alegre;18.0;17.7;80;few clouds;4.7
-23/05/2026;11:30:00;Brasília;25.1;24.8;50;clear sky;2.9
-23/05/2026;11:35:00;Salvador;29.0;30.2;73;scattered clouds;4.5
-23/05/2026;11:40:00;Fortaleza;30.7;33.0;66;clear sky;6.0
-23/05/2026;11:45:00;Recife;29.5;31.0;75;broken clouds;5.0
-23/05/2026;11:50:00;Curitiba;17.0;16.4;84;few clouds;3.2
-23/05/2026;11:55:00;Manaus;33.1;36.8;63;thunderstorm;2.0
-24/05/2026;12:10:00;Rio de Janeiro;28.0;29.0;73;clear sky;4.2
-24/05/2026;12:15:00;São Paulo;22.0;21.8;78;overcast clouds;3.7
-24/05/2026;12:20:00;Belo Horizonte;24.0;23.6;66;clear sky;1.9
-24/05/2026;12:25:00;Porto Alegre;19.2;18.8;77;few clouds;4.5
-24/05/2026;12:30:00;Brasília;26.0;25.6;48;clear sky;2.7
-24/05/2026;12:35:00;Salvador;29.8;31.1;70;scattered clouds;4.7
-24/05/2026;12:40:00;Fortaleza;31.2;33.6;64;clear sky;5.9
-24/05/2026;12:45:00;Recife;30.1;31.7;73;broken clouds;4.8
-24/05/2026;12:50:00;Curitiba;18.1;17.6;81;few clouds;3.0
-24/05/2026;12:55:00;Manaus;33.8;37.5;61;thunderstorm;1.8
-25/05/2026;13:10:00;Rio de Janeiro;28.8;30.0;70;clear sky;4.5
-25/05/2026;13:15:00;São Paulo;23.1;22.9;75;broken clouds;3.5
-25/05/2026;13:20:00;Belo Horizonte;25.0;24.7;63;clear sky;1.8
-25/05/2026;13:25:00;Porto Alegre;20.0;19.6;74;few clouds;4.2
-25/05/2026;13:30:00;Brasília;27.0;26.5;45;clear sky;2.5
-25/05/2026;13:35:00;Salvador;30.5;31.9;68;scattered clouds;4.9
-25/05/2026;13:40:00;Fortaleza;31.8;34.2;62;clear sky;5.8
-25/05/2026;13:45:00;Recife;30.7;32.3;71;broken clouds;4.7
-25/05/2026;13:50:00;Curitiba;19.0;18.5;79;few clouds;2.8
-25/05/2026;13:55:00;Manaus;34.2;38.0;59;thunderstorm;1.7
+21/05/2026;09:10:00;Rio Branco;30.2;33.1;74;light rain;2.4
+21/05/2026;09:15:00;Macapá;31.0;34.0;78;scattered clouds;3.1
+21/05/2026;09:20:00;Belém;30.8;33.5;85;thunderstorm;3.6
+21/05/2026;09:25:00;Porto Velho;32.1;35.2;70;clear sky;2.8
+21/05/2026;09:30:00;Boa Vista;33.0;36.0;65;clear sky;3.0
+21/05/2026;09:35:00;Palmas;29.5;31.8;68;few clouds;2.9
+21/05/2026;09:40:00;Maceió;28.7;30.1;80;broken clouds;4.2
+21/05/2026;09:45:00;São Luís;29.9;32.0;83;scattered clouds;3.8
+21/05/2026;09:50:00;João Pessoa;28.5;30.0;82;light rain;4.0
+21/05/2026;09:55:00;Teresina;31.5;34.2;67;clear sky;3.5
+22/05/2026;10:00:00;Natal;29.0;31.0;81;few clouds;5.0
+22/05/2026;10:05:00;Aracaju;28.3;30.2;79;scattered clouds;4.1
+22/05/2026;10:10:00;Goiânia;26.4;27.8;60;clear sky;3.2
+22/05/2026;10:15:00;Cuiabá;33.2;37.0;55;clear sky;2.6
+22/05/2026;10:20:00;Campo Grande;27.8;29.0;62;few clouds;3.0
+22/05/2026;10:25:00;Vitória;25.6;26.4;78;broken clouds;3.7
+22/05/2026;10:30:00;Florianópolis;18.9;18.2;85;light rain;4.8

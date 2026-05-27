@@ -1,36 +1,14 @@
-from pathlib import Path
-import subprocess
-import sys
+import requests
+import pandas as pd
+from datetime import datetime
+from dotenv import load_dotenv
+import os
 
-APP_NAME = '416bbb07e207cf9aaaac3fc5eae8089e'
+load_dotenv()
 
-DATA_DIR = Path('data')
-CSV_FILE = DATA_DIR / 'weather.csv'
-DASHBOARD_FILE = Path('dashboard.py')
+# Getting API key from environment
+API_KEY = os.getenv('key')
 
-def check_files():
-    DATA_DIR.mkdir(exist_ok=True)
+print("Opening SkyData dashboard...")
 
-    if not CSV_FILE.exists():
-        print('\n[ERROR] weather.csv not found.\n')
-        sys.exit()
-
-    if not DASHBOARD_FILE.exists():
-        print('\n[ERROR] dashboard.py not found.\n')
-        sys.exit()
-
-def start_dashboard():
-    print(f'\nStarting {APP_NAME} Dashboard...\n')
-
-    subprocess.run([
-        'streamlit',
-        'run',
-        'dashboard.py'
-    ])
-
-def main():
-    check_files()
-    start_dashboard()
-
-if __name__ == '__main__':
-    main()
+os.system("streamlit run dashboard.py")

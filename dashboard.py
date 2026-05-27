@@ -149,7 +149,11 @@ city_to_state = {
     
     # Tocantins
     'Palmas': 'Tocantins',
+<<<<<<< HEAD
     'Araguaína': 'Tocantins',
+=======
+    'Araguaína': 'Tocantins'
+>>>>>>> d36a605 (new version)
 }
 
 st.markdown("""
@@ -367,4 +371,8 @@ if geojson_path.exists():
         use_container_width=True
     )
 else:
+<<<<<<< HEAD
     st.info('Map visualization will be available once brazil_states.geojson is added.')
+=======
+    st.info('Map visualization will be available once brazil_states.geojson is added.')
+>>>>>>> d36a605 (new version)

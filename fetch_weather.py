@@ -1,52 +1,30 @@
+"""Módulo para coleta de dados climáticos da OpenWeather API"""
+
 import requests
 import pandas as pd
 from datetime import datetime
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from config import CITIES, CSV_FILE, DATA_DIR
+from logger_config import get_logger
 
 load_dotenv()
-
-# Configuração
+logger = get_logger('fetch_weather')
 API_KEY = os.getenv('OPENWEATHER_API_KEY')
-DATA_DIR = Path('data')
-CSV_FILE = DATA_DIR / 'weather.csv'
 
-# Cidades e estados do Brasil
-CITIES = {
-    'Rio Branco': 'AC',
-    'Maceió': 'AL',
-    'Macapá': 'AP',
-    'Manaus': 'AM',
-    'Salvador': 'BA',
-    'Fortaleza': 'CE',
-    'Brasília': 'DF',
-    'Vitória': 'ES',
-    'Goiânia': 'GO',
-    'São Luís': 'MA',
-    'Cuiabá': 'MT',
-    'Campo Grande': 'MS',
-    'Belo Horizonte': 'MG',
-    'Belém': 'PA',
-    'João Pessoa': 'PB',
-    'Curitiba': 'PR',
-    'Recife': 'PE',
-    'Teresina': 'PI',
-    'Rio de Janeiro': 'RJ',
-    'Natal': 'RN',
-    'Porto Alegre': 'RS',
-    'Porto Velho': 'RO',
-    'Boa Vista': 'RR',
-    'Joinville': 'SC',
-    'São Paulo': 'SP',
-    'Aracaju': 'SE',
-    'Palmas': 'TO',
-}
+def validate_api_key():
+    """Valida se a API key está configurada"""
+    if not API_KEY:
+        logger.error("OPENWEATHER_API_KEY não configurada no .env")
+        return False
+    logger.info("API key validada com sucesso")
+    return True
 
 def get_weather_data(city_name, state_code):
     """Busca dados de clima da OpenWeather API"""
     try:
-        url = f"https://api.openweathermap.org/data/2.5/weather"
+        url = "https://api.openweathermap.org/data/2.5/weather"
         params = {
             'q': f"{city_name},{state_code},BR",
             'appid': API_KEY,
@@ -56,7 +34,6 @@ def get_weather_data(city_name, state_code):
         
         response = requests.get(url, params=params, timeout=5)
         response.raise_for_status()
-        
         data = response.json()
         
         return {
@@ -69,44 +46,39 @@ def get_weather_data(city_name, state_code):
             'weather': data['weather'][0]['main'].lower(),
             'wind_speed': round(data['wind']['speed'], 1)
         }
-    except requests.exceptions.RequestException as e:
-        print(f"⚠️  Erro ao buscar dados de {city_name}: {str(e)}")
+        
+    except requests.exceptions.Timeout:
+        logger.warning(f"Timeout ao buscar dados de {city_name}")
+        return None
+    except requests.exceptions.HTTPError as e:
+        logger.warning(f"Erro HTTP para {city_name}: {str(e)}")
+        return None
+    except (requests.exceptions.RequestException, KeyError) as e:
+        logger.warning(f"Erro ao buscar dados de {city_name}: {str(e)}")
         return None
 
 def main():
     """Coleta dados de todas as cidades e salva no CSV"""
-    if not API_KEY:
-        print("❌ OPENWEATHER_API_KEY não configurada no .env")
+    if not validate_api_key():
         return False
     
-    print(f"🌍 Coletando dados de {len(CITIES)} cidades...")
+    logger.info(f"🌍 Iniciando coleta de dados de {len(CITIES)} cidades...")
     
     data_list = []
-    
     for city_name, state_code in CITIES.items():
-        print(f"📍 Buscando {city_name}...", end=' ')
+        logger.info(f"📍 Buscando {city_name}...")
         weather_data = get_weather_data(city_name, state_code)
-        
         if weather_data:
             data_list.append(weather_data)
-            print("✅")
-        else:
-            print("⚠️")
-    
+        
     if data_list:
-        # Criar DataFrame
         df = pd.DataFrame(data_list)
-        
-        # Garantir que o diretório existe
-        DATA_DIR.mkdir(exist_ok=True)
-        
-        # Salvar como CSV
+        Path(DATA_DIR).mkdir(exist_ok=True)
         df.to_csv(CSV_FILE, sep=';', index=False, encoding='utf-8')
-        
-        print(f"\n✅ {len(data_list)} cidades atualizadas em {CSV_FILE}")
+        logger.info(f"✅ {len(data_list)}/{len(CITIES)} cidades atualizadas em {CSV_FILE}")
         return True
     else:
-        print("\n❌ Nenhum dado foi coletado.")
+        logger.error("❌ Nenhum dado foi coletado.")
         return False
 
 if __name__ == '__main__':

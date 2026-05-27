@@ -1,98 +1,36 @@
-from graph import plot_all_cities
-import requests
-import pandas as pd
-from datetime import datetime
-import os
+from pathlib import Path
+import subprocess
+import sys
 
-API_KEY = 'KEY_HERE'
+APP_NAME = '416bbb07e207cf9aaaac3fc5eae8089e'
 
-cities = [
-    'Rio de Janeiro',
-    'São Paulo',
-    'Belo Horizonte',
-    'Porto Alegre'
-]
+DATA_DIR = Path('data')
+CSV_FILE = DATA_DIR / 'weather.csv'
+DASHBOARD_FILE = Path('dashboard.py')
 
+def check_files():
+    DATA_DIR.mkdir(exist_ok=True)
 
-os.makedirs('data', exist_ok=True)
+    if not CSV_FILE.exists():
+        print('\n[ERROR] weather.csv not found.\n')
+        sys.exit()
 
-while True:
+    if not DASHBOARD_FILE.exists():
+        print('\n[ERROR] dashboard.py not found.\n')
+        sys.exit()
 
-    print('\n========== SKYDATA ==========')
-    print('\nSelect an option:\n')
+def start_dashboard():
+    print(f'\nStarting {APP_NAME} Dashboard...\n')
 
-    for index, city in enumerate(cities, start=1):
-        print(f'{index} - {city}')
+    subprocess.run([
+        'streamlit',
+        'run',
+        'dashboard.py'
+    ])
 
-    print('5 - Show graph')
-    print('0 - Exit')
+def main():
+    check_files()
+    start_dashboard()
 
-    option = input('\nEnter the option number: ')
-
-    if option == '0':
-        print('\nClosing SkyData...')
-        break
-
-    if not option.isdigit():
-        print('\nInvalid option!')
-        continue
-
-    option = int(option)
-
-    if option == 5:
-        plot_all_cities()
-        continue
-
-    if option < 1 or option > len(cities):
-        print('\nInvalid option!')
-        continue
-
-    city = cities[option - 1]
-
-    url = (
-        f'https://api.openweathermap.org/data/2.5/weather'
-        f'?q={city}&appid={API_KEY}&lang=en&units=metric'
-    )
-
-    response = requests.get(url)
-    data = response.json()
-
-    if response.status_code == 200:
-
-        now = datetime.now()
-
-        weather_data = {
-            'date': [now.strftime('%d/%m/%Y')],
-            'time': [now.strftime('%H:%M:%S')],
-            'city': [data['name']],
-            'temperature': [data['main']['temp']],
-            'feels_like': [data['main']['feels_like']],
-            'humidity': [data['main']['humidity']],
-            'weather': [data['weather'][0]['description']],
-            'wind_speed': [data['wind']['speed']]
-        }
-
-        df = pd.DataFrame(weather_data)
-
-        file_path = 'data/weather.csv'
-        file_exists = os.path.isfile(file_path)
-
-        try:
-
-            df.to_csv(
-                file_path,
-                sep=';',
-                index=False,
-                mode='a',
-                header=not file_exists,
-                encoding='utf-8-sig'
-            )
-
-            print('\nData saved successfully!')
-
-        except PermissionError:
-            print('\nClose weather.csv before running the system!')
-
-    else:
-        print('\nAPI error')
-        print(data)
+if __name__ == '__main__':
+    main()

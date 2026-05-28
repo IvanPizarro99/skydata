@@ -1,0 +1,8 @@
+streamlit
+plotly
+pandas
+requests
+python-dotenv
+matplotlib
+streamlit-autorefresh
+geocoder
